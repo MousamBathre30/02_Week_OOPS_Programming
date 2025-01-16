@@ -1,0 +1,53 @@
+
+public class StudentMangeApp {
+  
+   private String name;
+   private String rollNumber;
+   private int marks;
+   
+   // Constructor
+   StudentMangeApp(String name , String rollNumber , int marks){
+	   this.name = name;
+	   this.rollNumber = rollNumber ;
+	   this.marks = marks ;
+   }
+   
+   // Method to display book details 
+   
+   public void display(){
+	   System.out.println("name is  - " + name);
+	   System.out.println("rollNumber is : - " + rollNumber);
+	   System.out.println("marks.. ($)" + marks); 
+	   System.out.println("Grade is  " + grade(marks));
+
+   }
+   
+   public void grade(int marks){
+	  if(marks >= 90){System.out.println("A+");}
+	  else if(marks >= 90){System.out.println("B+");}
+	  else if(marks >= 90){System.out.println("C+");}
+	  else if(marks >= 90){System.out.println("C");}
+	  else {System.out.println("D");}
+   }
+
+
+   public static void main(String args[]){
+     // enter the employee manage App.
+	 StudentMangeApp s1 = new StudentMangeApp("Mousam" , "0191AL211090" , 90);
+	 StudentMangeApp s2 = new StudentMangeApp("Salu " , "0191AL211062" , 78);
+	 
+	 
+	 // Print the layout 
+	 
+	 System.out.println("***************");
+	 System.out.println("Enter the student App");
+	 System.out.println("******* student-1 ********");
+	 s1.display();
+	
+	 System.out.println("******* student-2 ********");
+	 s2.display();
+	 
+	 
+   }
+
+}

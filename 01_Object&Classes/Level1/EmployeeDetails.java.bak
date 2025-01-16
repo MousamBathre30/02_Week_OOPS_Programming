@@ -1,0 +1,67 @@
+
+public class EmployeeDetails {
+  
+   private String restaurantName;
+   private String location;
+   private String [] foodItems;
+   
+   // Constructor
+   FoodDeliveryApp(String restaurantName , String location , String [] foodItems){
+	   this.restaurantName = restaurantName;
+	   this.location = location ;
+	   this.foodItems = foodItems ;
+   }
+   
+   // Method to display restaurant details 
+   
+   public void display(){
+	   System.out.println("Restaurant Name " + restaurantName);
+	   System.out.println("Restaurant Location " + location);
+	   System.out.println("Food Iteams..");
+	   for(String item : foodItems){
+		   System.out.println("-" + item);
+	   }
+	   
+   }
+   
+   // Method to check the food iteam 
+   
+   public boolean isFoodAvailable(String food){
+	   
+	   for(String item : foodItems){
+		   if(item.equalsIgnoreCase(food)){
+			   return true;
+		   }
+	   }
+	   return false;
+   }
+   
+  
+  
+  
+   public static void main(String args[]){
+     // enter the food delivery App.
+	 
+	 String foodItems1[] = {"Meggi", "Pasta", "Burger"};
+	 String foodItems2[] = {"Samosa", "Cachori","Chaat"};
+	 FoodDeliveryApp f1 = new FoodDeliveryApp("CAFE-Nameste" , "PanchmariRoad" , foodItems1);
+	 FoodDeliveryApp f2 = new FoodDeliveryApp("AGRAWAL-MISTAN" , "TEHSIL-COLONY" , foodItems2);
+	 
+	 // Print the layout 
+	 
+	 System.out.println("***************");
+	 System.out.println("Enter the FoodDelivery App");
+	 System.out.println("******* Restorant-1 ********");
+	 f1.display();
+	 System.out.println("******* Restorant-2 ********");
+	 f2.display();
+	 
+	 // check availability 
+	 
+	 System.out.println("Checking food Availability...");
+	 
+	 System.out.println("is Pasta available in the Cafe-nameste" + f1.isFoodAvailable("Pasta"));
+	  System.out.println("is Pasta available in the Agrawal-mistan" + f2.isFoodAvailable("Samosa"));
+   }
+
+}

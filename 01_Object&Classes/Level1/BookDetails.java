@@ -1,0 +1,44 @@
+
+public class BookDetails {
+  
+   private String bookName;
+   private String bookAuthor;
+   private String bookPrice;
+   
+   // Constructor
+   BookDetails(String bookName , String bookAuthor , String bookPrice){
+	   this.bookName = bookName;
+	   this.bookAuthor = bookAuthor ;
+	   this.bookPrice = bookPrice ;
+   }
+   
+   // Method to display book details 
+   
+   public void display(){
+	   System.out.println("bookName is  - " + bookName);
+	   System.out.println("bookAuthor is : - " + bookAuthor);
+	   System.out.println("bookPrice.." + bookPrice);
+	   
+	   
+   }
+   
+
+   public static void main(String args[]){
+     // enter the employee manage App.
+	 BookDetails b1 = new BookDetails("Eat-That-Frog" , "Brayne-Trace" , "100$");
+	 BookDetails b2 = new BookDetails("You-Can-Win" , "Shive-Kheda" , "300$");
+	 
+	 
+	 // Print the layout 
+	 
+	 System.out.println("***************");
+	 System.out.println("Enter the book App");
+	 System.out.println("******* book-1 ********");
+	 b1.display();
+	 System.out.println("******* book-2 ********");
+	 b2.display();
+	 
+	 
+   }
+
+}
