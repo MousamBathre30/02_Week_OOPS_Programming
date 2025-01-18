@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class LibrarySystem {
+
+  private String  title; 
+  private String  author;
+  private int  price;
+  private int  availability;
+  
+
+	
+  // parmeterized 
+  LibrarySystem(String  title , String author , int price , int availability){
+    this.title = title;
+	this.author = author;
+	this.price = price;
+	this.availability = availability;
+  }
+  
+  public boolean checkabality(){
+	  if(availability > 1){
+		  return true;
+	  }
+	  return false;
+  }
+  
+  public void borrow(){
+	  availability -=1;
+	  
+  }
+
+   
+    public void displayDetails(){
+	   System.out.println("****************************************");
+	   System.out.println("Welcome to the World of Book..");
+	   System.out.println("book... Information           ");
+	   System.out.println("Author..Name   " + author);
+	   System.out.println("Price...  " + price);
+	   System.out.println("****************************************");
+	  
+	}
+
+  public static void main(String args[]){
+  
+    // Library Mange System 
+    Scanner scanner = new Scanner(System.in);
+    LibrarySystem lib = new LibrarySystem("Eat that frog" , "Author" , 23 , 2);
+    System.out.println("Order:-1");
+	lib.displayDetails();
+	System.out.println("Want to borrow the Book");
+	System.out.println("Enter Y/N");
+	char input = scanner.next().charAt(1);
+	if(input == 'Y'){
+		System.out.println("Enter the name of book");
+		String book = scanner.nextLine();
+		System.out.println("Cheking for availability..");
+		boolean val = lib.checkabality();
+		
+		if(val){
+			System.out.println("Yes you can..");
+			lib.borrow();
+			System.out.println("Enetr Y/N for details");
+			char input2 = scanner.next().charAt(1);
+			if(input2 == 'Y'){
+				lib.displayDetails();
+			}else{
+				System.out.println("Thank-You");
+				
+			}
+		}
+	}else{
+		System.out.println("Thank You Vist..Again");
+	
+	}
+	 
+  }
+
+}

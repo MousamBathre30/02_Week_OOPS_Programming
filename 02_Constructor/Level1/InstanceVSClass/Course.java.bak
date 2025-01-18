@@ -1,0 +1,41 @@
+public class Course {
+    // Instance variables
+    private String courseName;
+    private int duration; // in months
+    private double fee;
+    
+    // Class variable (common for all courses)
+    private static String instituteName = "Default Institute";
+    
+    // Constructor
+    public Course(String courseName, int duration, double fee) {
+        this.courseName = courseName;
+        this.duration = duration;
+        this.fee = fee;
+    }
+    
+    // Instance method to display course details
+    public void displayCourseDetails() {
+        System.out.println("Course Name: " + courseName);
+        System.out.println("Duration: " + duration + " months");
+        System.out.println("Fee: $" + fee);
+        System.out.println("Institute Name: " + instituteName);
+    }
+    
+    // Class method to update the institute name
+    public static void updateInstituteName(String newInstituteName) {
+        instituteName = newInstituteName;
+    }
+    
+    // Main method for testing
+    public static void main(String[] args) {
+        // Update the institute name using the class method
+        Course.updateInstituteName("Tech Academy");
+        
+        // Creating course instances
+        Course course1 = new Course("Java Programming", 6, 500.00);
+        Course course2 = new Course("Data Science", 12, 1200.00);
+        
+        // Display details of each course
+        course1.displayCourseDetails();
+        System.out.pr
